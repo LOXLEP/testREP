@@ -8,6 +8,7 @@ public class Dog {
    }
 
    void hungry() {
+      int aurel=10;
    }
 
    void sleeping() {
