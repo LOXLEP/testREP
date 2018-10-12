@@ -4,6 +4,7 @@ public class Dog {
    String color;
 
    void barking() {
+   System.Out.println("Dis latz");
    }
 
    void hungry() {
