@@ -1,0 +1,32 @@
+<ESGReport>
+
+                <Task Id="RunESGReport">
+                                <Type>CommandLine</Type>
+                                <Cmd>java -Xms1024m -Xmx1024m -Djava.library.path=\\merlin\lib_quantlab\StarQube\Versions\1.0.11778\C\x64\ -cp 
+                                        "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\bin\asm-1.0.2.jar";
+                                        "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\bin\asm-3.3.1.jar";
+                                        "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\bin\com.loam.quant.platform.adapter-1.0.00004.jar";
+                                        "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\bin\com.loam.quant.platform.reporting.engine-1.0-SNAPSHOT.jar";
+                                        "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\bin\com.loam.quant.toolkit-1.0.00001.jar";
+                                        "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\bin\gson-2.8.2.jar";
+                                        "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\bin\guava-19.0.jar";
+                                        "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\bin\jdom2-2.0.6.jar";
+                                        "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\bin\json-path-2.0.0.jar";
+                                        "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\bin\json-smart-2.1.1.jar";
+                                        "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\bin\slf4j-api-1.7.10.jar";
+                                        "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\bin\sq-quant-platform-1.0.10969.jar";
+                                        com.loam.quant.platform.reporting.engine.Executor "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\Configuration\com.loam.quant.platform.reporting.engine.configuration.xml" "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine"
+                                </Cmd>
+                                <ReadPermissions>SRI</ReadPermissions>
+                                <WritePermissions>HMK</WritePermissions>
+                </Task>
+                <Task Id="UpdateExcelDataFiles">
+                                <Type>CommandLine</Type>
+                                <Dependencies>RunESGReport</Dependencies>
+                                <Cmd>start "" "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\LOAM.HTMLExcelProcessor\LOAM.HTMLExcelProcessor.exe" "\\merlin\LIB_LOIM_SRI_COMMITTEE\Reporting Engine\Data"</Cmd>
+                                <ReadPermissions>SRI</ReadPermissions>
+                                <WritePermissions>HMK</WritePermissions>
+                </Task>
+
+
+</ESGReport>
